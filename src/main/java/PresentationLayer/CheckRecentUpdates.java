@@ -1,5 +1,5 @@
 /*
- * This form displays the recent updates, as latest  
+ * This form displays the recent updates, as latest
  * courses that my friends have enrolled.
  */
 package PresentationLayer;
@@ -17,13 +17,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
 import PresentationLayer.DB;
+
 import static java.util.logging.Level.ALL;
 
-/**
- *
- * @author ndoni, muco, tahiraj
- */
+
 public class CheckRecentUpdates extends javax.swing.JFrame {
 
     /**
@@ -35,27 +34,28 @@ public class CheckRecentUpdates extends javax.swing.JFrame {
         initComponents();
         DefaultTableModel model;
         model = (DefaultTableModel) updatesTable.getModel();
- 
-        try(Connection Con = DB.getConnection()) {
-            PreparedStatement ps=Con.prepareStatement("select enrollcourses.CourseID,enrollcourses.UserID,courses.CourseName , enrollcourses.IssueDate, enrollcourses.ReturnDate from courses,enrollcourses where courses.CourseID=enrollcourses.CourseID;",ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
-            ResultSet rs= ps.executeQuery();
-            
-           ResultSetMetaData rsmd = rs.getMetaData();
-  
-            int colnum=rsmd.getColumnCount();
-  
+
+        try (Connection Con = DB.getConnection()) {
+            PreparedStatement ps = Con.prepareStatement("select enrollcourses.CourseID,enrollcourses.UserID,courses.CourseName , enrollcourses.IssueDate, enrollcourses.ReturnDate from courses,enrollcourses where courses.CourseID=enrollcourses.CourseID;", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            ResultSet rs = ps.executeQuery();
+
+            ResultSetMetaData rsmd = rs.getMetaData();
+
+            int colnum = rsmd.getColumnCount();
+
             String Row[];
             Row = new String[colnum];
-            while(rs.next()){
-                for(int i=1;i<=colnum;i++){
-                    Row[i-1]=rs.getString(i);
-                    }
-                 model.addRow(Row);
+            while (rs.next()) {
+                for (int i = 1; i <= colnum; i++) {
+                    Row[i - 1] = rs.getString(i);
+                }
+                model.addRow(Row);
             }
 
-           Con.close();
-        }catch(Exception e){System.out.println(e);
-    }
+            Con.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     /**
@@ -111,22 +111,22 @@ public class CheckRecentUpdates extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(BackToBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(BackToBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BackToBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(BackToBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -135,21 +135,21 @@ public class CheckRecentUpdates extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(95, Short.MAX_VALUE))
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(62, 62, 62)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(95, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(280, Short.MAX_VALUE))
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(68, 68, 68)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(46, 46, 46)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(280, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
@@ -175,25 +175,25 @@ public class CheckRecentUpdates extends javax.swing.JFrame {
         });
 
         updatesTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-            },
-            new String [] {
-                "Course ID","User ID", "Course Name", "Start Date", "End Date"
-            }
+                new Object[][]{
+                },
+                new String[]{
+                        "Course ID", "User ID", "Course Name", "Start Date", "End Date"
+                }
         ) {
-            Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            Class[] types = new Class[]{
+                    java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+            boolean[] canEdit = new boolean[]{
+                    false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+                return types[columnIndex];
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+                return canEdit[columnIndex];
             }
         });
         updatesTable.setRowHeight(20);
@@ -222,57 +222,57 @@ public class CheckRecentUpdates extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(NameRadio)
-                        .addGap(18, 18, 18)
-                        .addComponent(CourseIDRadio)
-                        .addGap(32, 32, 32)
-                        .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(30, 30, 30))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(210, 210, 210)))))
+                                .addContainerGap(39, Short.MAX_VALUE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(NameRadio)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(CourseIDRadio)
+                                                .addGap(32, 32, 32)
+                                                .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(30, 30, 30))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(210, 210, 210)))))
         );
         jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(NameRadio)
-                        .addComponent(CourseIDRadio))
-                    .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(45, 45, 45)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jButton1)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(NameRadio)
+                                                .addComponent(CourseIDRadio))
+                                        .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(46, 46, 46)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -292,107 +292,102 @@ public class CheckRecentUpdates extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SearchFieldActionPerformed
 
-     /**
-    * This button is used to search or filter for friends or courses that
-    * our friends have enrolled into.
-    */
+    /**
+     * This button is used to search or filter for friends or courses that
+     * our friends have enrolled into.
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-             DefaultTableModel model;
+        DefaultTableModel model;
         model = (DefaultTableModel) updatesTable.getModel();
-        while(model.getRowCount()>0)
-            model.removeRow(model.getRowCount()-1);
-        if(NameRadio.isSelected())
-        {
+        while (model.getRowCount() > 0)
+            model.removeRow(model.getRowCount() - 1);
+        if (NameRadio.isSelected()) {
 
-            String Search = "%"+SearchField.getText()+"%";
-        try(Connection Con = DB.getConnection()) {
-            PreparedStatement ps=Con.prepareStatement("select enrollcourses.CourseID,enrollcourses.UserID,courses.CourseName , enrollcourses.IssueDate, enrollcourses.ReturnDate from courses,enrollcourses where courses.CourseID=enrollcourses.CourseID and courses.CourseName like ?",ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
-            ps.setString(1, Search);
-            ResultSet rs= ps.executeQuery();
-            
-           ResultSetMetaData rsmd = rs.getMetaData();
-  
-            int colnum=rsmd.getColumnCount();
- 
-            String Row[];
-            Row = new String[colnum];
-            while(rs.next()){
-                for(int i=1;i<=colnum;i++){
-                    Row[i-1]=rs.getString(i);
+            String Search = "%" + SearchField.getText() + "%";
+            try (Connection Con = DB.getConnection()) {
+                PreparedStatement ps = Con.prepareStatement("select enrollcourses.CourseID,enrollcourses.UserID,courses.CourseName , enrollcourses.IssueDate, enrollcourses.ReturnDate from courses,enrollcourses where courses.CourseID=enrollcourses.CourseID and courses.CourseName like ?", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+                ps.setString(1, Search);
+                ResultSet rs = ps.executeQuery();
+
+                ResultSetMetaData rsmd = rs.getMetaData();
+
+                int colnum = rsmd.getColumnCount();
+
+                String Row[];
+                Row = new String[colnum];
+                while (rs.next()) {
+                    for (int i = 1; i <= colnum; i++) {
+                        Row[i - 1] = rs.getString(i);
                     }
-                 model.addRow(Row);
+                    model.addRow(Row);
+                }
+                int rowcount = model.getRowCount();
+                System.out.println(rowcount);
+                if (rowcount == 0) {
+                    String NoRow[];
+                    NoRow = new String[7];
+                    NoRow[1] = "NO";
+                    NoRow[2] = "RESULT";
+                    NoRow[0] = "";
+                    NoRow[3] = "";
+                    NoRow[4] = "";
+                    NoRow[5] = "";
+                    NoRow[6] = "";
+                    model.addRow(NoRow);
+
+
+                }
+
+                Con.close();
+            } catch (Exception e) {
+                System.out.println(e);
             }
-            int rowcount = model.getRowCount();
-             System.out.println(rowcount);
-            if(rowcount==0)
-            {
-                String NoRow[];
-                NoRow = new String[7];
-                NoRow[1]="NO";
-                NoRow[2]="RESULT";
-                NoRow[0]="";
-                NoRow[3]="";
-                NoRow[4]="";
-                NoRow[5]="";
-                NoRow[6]="";
-                model.addRow(NoRow);
-                
-                
-            }
-  
-           Con.close();
-        }catch(Exception e){System.out.println(e);
-    } }
-        
-        else if(CourseIDRadio.isSelected())
-        {
+        } else if (CourseIDRadio.isSelected()) {
 
             String Search = SearchField.getText();
             int BookIDV;
-        BookIDV = Integer.parseInt(Search);
-        try(Connection Con = DB.getConnection()) {
-            PreparedStatement ps=Con.prepareStatement("select enrollcourses.CourseID,enrollcourses.UserID,courses.CourseName , enrollcourses.IssueDate, enrollcourses.ReturnDate from courses,enrollcourses where courses.CourseID=enrollcourses.CourseID and enrollcourses.CourseID=?",ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
-            ps.setInt(1,BookIDV);
-            ResultSet rs= ps.executeQuery();
-            
-           ResultSetMetaData rsmd = rs.getMetaData();
-  
-            int colnum=rsmd.getColumnCount();
+            BookIDV = Integer.parseInt(Search);
+            try (Connection Con = DB.getConnection()) {
+                PreparedStatement ps = Con.prepareStatement("select enrollcourses.CourseID,enrollcourses.UserID,courses.CourseName , enrollcourses.IssueDate, enrollcourses.ReturnDate from courses,enrollcourses where courses.CourseID=enrollcourses.CourseID and enrollcourses.CourseID=?", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+                ps.setInt(1, BookIDV);
+                ResultSet rs = ps.executeQuery();
 
-            String Row[];
-            Row = new String[colnum];
-            while(rs.next()){
-                for(int i=1;i<=colnum;i++){
-                    Row[i-1]=rs.getString(i);
+                ResultSetMetaData rsmd = rs.getMetaData();
+
+                int colnum = rsmd.getColumnCount();
+
+                String Row[];
+                Row = new String[colnum];
+                while (rs.next()) {
+                    for (int i = 1; i <= colnum; i++) {
+                        Row[i - 1] = rs.getString(i);
                     }
-                 model.addRow(Row);
-            }
-            int rowcount = model.getRowCount();
-             System.out.println(rowcount);
-            if(rowcount==0)
-            {
-                String NoRow[];
-                NoRow = new String[7];
-                NoRow[1]="NO";
-                NoRow[2]="RESULT";
-                NoRow[0]="";
-                NoRow[3]="";
-                NoRow[4]="";
-                NoRow[5]="";
-                NoRow[6]="";
-                model.addRow(NoRow);
-                
-                
-            }
+                    model.addRow(Row);
+                }
+                int rowcount = model.getRowCount();
+                System.out.println(rowcount);
+                if (rowcount == 0) {
+                    String NoRow[];
+                    NoRow = new String[7];
+                    NoRow[1] = "NO";
+                    NoRow[2] = "RESULT";
+                    NoRow[0] = "";
+                    NoRow[3] = "";
+                    NoRow[4] = "";
+                    NoRow[5] = "";
+                    NoRow[6] = "";
+                    model.addRow(NoRow);
 
-           Con.close();
-        }catch(Exception e){System.out.println(e);
-    }
-        }
-        else
-        {
-        JOptionPane.showMessageDialog(CheckRecentUpdates.this, "Select Name or Author","No Selection!", JOptionPane.ERROR_MESSAGE);
+
+                }
+
+                Con.close();
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        } else {
+            JOptionPane.showMessageDialog(CheckRecentUpdates.this, "Select Name or Author", "No Selection!", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -413,7 +408,7 @@ public class CheckRecentUpdates extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
