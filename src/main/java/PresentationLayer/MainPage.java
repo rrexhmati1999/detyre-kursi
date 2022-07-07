@@ -34,7 +34,7 @@ public class MainPage extends javax.swing.JFrame {
 
     /**
      * Creates new form MainPage, here we display all the courses existing
-     * in the database into a table to the form.
+     * in the database into a table to the form......
      */
     public MainPage() throws SQLException {
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
