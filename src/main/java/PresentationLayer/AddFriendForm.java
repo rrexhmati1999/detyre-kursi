@@ -13,28 +13,27 @@ import java.util.Date;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
 import PresentationLayer.DB;
 import BusinessNDataAccessLayer.FriendsDao;
+
 import static PresentationLayer.MainPage.ThisLogined;
 import static PresentationLayer.MainPage.PersonID;
 
-/**
- *
- * @author ndoni, muco, tahiraj
- */
+
 public class AddFriendForm extends javax.swing.JFrame {
 
     int friendshipIDV;
     String UserIDV;
     String FName;
-    
+
     /**
      * Creates new form AddFriendForm, by initializing the constructor.
      * Prints all the values of friends table into a table component, to display them to form.
      */
     public AddFriendForm() {
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        initComponents(); 
+        initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         UserIDField.setText(PersonID);
         DefaultTableModel model;
@@ -118,22 +117,22 @@ public class AddFriendForm extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(BackToBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(BackToBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BackToBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(BackToBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -141,21 +140,21 @@ public class AddFriendForm extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(362, 362, 362)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(362, 362, 362)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(138, 138, 138))
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(48, 48, 48)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(138, 138, 138))
         );
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 153));
@@ -186,25 +185,25 @@ public class AddFriendForm extends javax.swing.JFrame {
         });
 
         FriendsListTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-            },
-            new String [] {
-                "friendshipID", "friendName"
-            }
+                new Object[][]{
+                },
+                new String[]{
+                        "friendshipID", "friendName"
+                }
         ) {
-            Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            Class[] types = new Class[]{
+                    java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true
+            boolean[] canEdit = new boolean[]{
+                    false, false, false, false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+                return types[columnIndex];
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+                return canEdit[columnIndex];
             }
         });
         jScrollPane1.setViewportView(FriendsListTable);
@@ -234,75 +233,75 @@ public class AddFriendForm extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(29, 29, 29)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel13)
-                                .addComponent(jLabel5))
-                            .addGap(27, 27, 27)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(friendIDField, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                                .addComponent(UserIDField)))
+                jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(162, 162, 162)
-                        .addComponent(AddFriendBtn)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
-                .addGap(26, 26, 26))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                                        .addGap(29, 29, 29)
+                                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                .addComponent(jLabel13)
+                                                                .addComponent(jLabel5))
+                                                        .addGap(27, 27, 27)
+                                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                .addComponent(friendIDField, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                                                                .addComponent(UserIDField)))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                                        .addContainerGap()
+                                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addGap(162, 162, 162)
+                                                .addComponent(AddFriendBtn)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
+                                .addGap(26, 26, 26))
         );
         jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel4)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(54, 54, 54)
-                                .addComponent(jLabel5))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(UserIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel13)
-                                    .addComponent(friendIDField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(57, 57, 57)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65)
-                        .addComponent(AddFriendBtn)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(jLabel4)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addGap(12, 12, 12)
+                                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                                                .addGap(54, 54, 54)
+                                                                .addComponent(jLabel5))
+                                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                                                .addGap(44, 44, 44)
+                                                                .addComponent(UserIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                        .addComponent(jLabel13)
+                                                                        .addComponent(friendIDField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addGap(57, 57, 57)
+                                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(65, 65, 65)
+                                                .addComponent(AddFriendBtn)))
+                                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap())
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -318,13 +317,13 @@ public class AddFriendForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-     /**
-    * This button is used to add a new friend to friends list, 
-    * after the user and the friend is validated.
-    */
+    /**
+     * This button is used to add a new friend to friends list,
+     * after the user and the friend is validated.
+     */
     private void AddFriendBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddFriendBtnActionPerformed
         // TODO add your handling code here:
-        
+
         friendshipIDV = Integer.parseInt(friendIDField.getText());
         UserIDV = PersonID;
 
@@ -369,22 +368,19 @@ public class AddFriendForm extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
         String userN = String.valueOf(jComboBox1.getSelectedItem());
-        try(Connection Con = DB.getConnection()){
-            String sql="select * from login where UserName = ?";
+        try (Connection Con = DB.getConnection()) {
+            String sql = "select * from login where UserName = ?";
             PreparedStatement ps = Con.prepareStatement(sql);
             ps.setString(1, userN.trim());
-            ResultSet rs = ps.executeQuery(); 
-            
-            if(rs.next())
-            {
-                String name = rs.getString("LoginID"); 
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                String name = rs.getString("LoginID");
                 friendIDField.setText(name);
-            } 
+            }
+        } catch (Exception e) {
+            System.out.println(e);
         }
-        catch(Exception e)
-        {
-         System.out.println(e);     
-    }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
@@ -394,7 +390,7 @@ public class AddFriendForm extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -421,35 +417,34 @@ public class AddFriendForm extends javax.swing.JFrame {
             }
         });
     }
-     private void FillFriends()
-    { String userId = UserIDField.getText();
-        try(Connection Con = DB.getConnection()){
-            String sql="select * from login where LoginID != ?";
+
+    private void FillFriends() {
+        String userId = UserIDField.getText();
+        try (Connection Con = DB.getConnection()) {
+            String sql = "select * from login where LoginID != ?";
             PreparedStatement ps = Con.prepareStatement(sql);
             ps.setString(1, userId.trim());
-            ResultSet rs = ps.executeQuery(); 
-            
-            while(rs.next())
-            {
-                String name = rs.getString("UserName"); 
-                jComboBox1.addItem(name);  
-            } 
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                String name = rs.getString("UserName");
+                jComboBox1.addItem(name);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
         }
-        catch(Exception e)
-        {
-         System.out.println(e);     
+
     }
-        
-    }
-    public int addNewFriend(int friendID, int userID,String FName){
+
+    public int addNewFriend(int friendID, int userID, String FName) {
         return FriendsDao.addFriend(friendID, userID, FName);
     }
-    
-    public boolean validateFriend(String friendID){
+
+    public boolean validateFriend(String friendID) {
         return FriendsDao.FriendValidate(friendID);
     }
-    
-    public boolean validateUser(String userID){
+
+    public boolean validateUser(String userID) {
         return FriendsDao.UserValidate(userID);
     }
 
